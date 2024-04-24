@@ -1,0 +1,23 @@
+<form class="add-form"
+      [ngClass]="{'hide': !showAddTask}"
+      (ngSubmit)="onSubmit()">
+<!--  ngSubmit comes with the Module formsModule (added in app.module)-->
+  <div class="form-control">
+    <label for="text">Task</label>
+    <input type="text"
+           id="text"
+           name="text"
+           [(ngModel)]="text"
+           placeholder="Add a task..."/>
+  </div>
+  <div class="form-control">
+    <label for="day">Day and Time</label>
+    <input type="text" id="day" [(ngModel)]="day" name="day" placeholder="Add day and time..."/>
+  </div>
+  <div class="form-control form-control-check">
+    <label for="reminder">Set Reminder</label>
+    <input type="checkbox" [(ngModel)]="reminder" id="reminder" name="reminder" />
+  </div>
+
+  <input type="submit" value="Save Task" class="btn btn-block"/>
+</form>
